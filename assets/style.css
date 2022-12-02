@@ -1,9 +1,6 @@
 body {
     background-image: url('images/videogame\ background.gif');
     background-size: cover;
-    height: 100vh;
-    padding:0;
-    margin:0;
 }
 
 .Header {
