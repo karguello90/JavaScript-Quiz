@@ -1,0 +1,16 @@
+body {
+    background-image: url('images/videogame\ background.gif');
+    background-size: cover;
+    height: 100vh;
+    padding:0;
+    margin:0;
+}
+
+.Header {
+    background-color: aquamarine;
+    padding: 15px;
+    background-size: cover;
+    color: hsl(0, 0%, 0%);
+    height: 60px;
+    border-radius: 0px 15px 15px 0px;
+}
