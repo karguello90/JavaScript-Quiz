@@ -1,12 +1,11 @@
 body {
-    background-image: url('images/videogame\ background.gif');
+    background-image: url('./images/videogame\ background.gif');
     background-size: cover;
 }
 
 .Header {
     background-color: rgb(208, 53, 81);
     padding: 15px;
-    background-size: cover;
     color: hsl(297, 30%, 12%);
     height: 60px;
     border-radius: 0px 15px 15px 0px;
