@@ -7,10 +7,49 @@ body {
 }
 
 .Header {
-    background-color: aquamarine;
+    background-color: rgb(208, 53, 81);
     padding: 15px;
     background-size: cover;
-    color: hsl(0, 0%, 0%);
+    color: hsl(297, 30%, 12%);
     height: 60px;
     border-radius: 0px 15px 15px 0px;
+}
+
+.Header h1 {
+font-size: 75px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+margin-left: 20px;
+display: inline;
+width: 100px;
+}
+
+.Header a {
+    float: right;
+    margin-right: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 40px; 
+    color: #ffffff;
+    
+}
+
+a.glow, a.glow:hover, a.glow:focus {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	text-shadow: -1px 1px 8px rgb(105, 30, 65), 1px -1px 8px rgb(128, 54, 54);
+	-webkit-transition: 500ms linear 0s;
+	-moz-transition: 500ms linear 0s;
+	-o-transition: 500ms linear 0s;
+	transition: 500ms linear 0s;
+	outline: 0 none;
+}
+
+.Questions {
+    display: list-item;
+    margin-top: 30px;
+    margin-left: 90px;
+    min-height: 400px;
+    max-width: 380px;
+    background-color:rgb(59, 33, 57);
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px rgb(148, 103, 139);
 }
