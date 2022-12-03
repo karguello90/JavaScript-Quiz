@@ -1,0 +1,1 @@
+let generateBtn = document.querySelector("#start");
