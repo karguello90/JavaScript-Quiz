@@ -3,22 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name=""viewport" content=""width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="./assets/style.css">
     <title>Quiz time! - JavaScript</title>
 </head>
 
+
 <header>
     <div class="Header">
-        <h1>JavaScript Quiz 9000</h1>
-        <h1 class="timer"Time: <span id="timer"></span></h1>
+        <p id="timer">TIME LEFT: 60 s</p>
         <a href="High Scores" class="glow">HIGH SCORES</a>
     </div>
 </header>
 
+
 <body>
     <!--Main container for quiz-->
-    <div class="intro-container" class="show">
-        <div class="start questions">
+    <div class="intro-container" id=introcontainer">
+        <h1>JavaScript Quiz 9000</h1>
         <p>To win:</p>
         <p>Answer all questions before time runs out!</p>
         <p>Can you beat the quiz?</p>
@@ -30,19 +32,15 @@
                 </div>
                 </div>
             </button>
-        </div>
     </div>
 
-    <div id ="questions-container" class="hide">
-        <div class="questions container">
-            <div id="question"></div>
-            <div id="selection-buttons" class=""</div>
+    <div class="question-container" id="questionscontainer"
+        <div>
 
 
     
 
     <script src="./script.js"></script>
-
 </body>
 </html>
     

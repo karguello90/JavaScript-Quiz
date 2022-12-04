@@ -11,21 +11,19 @@ body {
     border-radius: 0px 15px 15px 0px;
 }
 
-.Header h1 {
-font-size: 75px;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-margin-left: 20px;
-display: inline;
-width: 100px;
-}
-
 .Header a {
     float: right;
     margin-right: 50px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 40px; 
     color: #ffffff;
-    
+}
+
+.Header p {
+    float: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px; 
+    color: #ffffff;
 }
 
 a.glow, a.glow:hover, a.glow:focus {
@@ -41,16 +39,23 @@ a.glow, a.glow:hover, a.glow:focus {
 
 .intro-container {
     display: inline-block;
-    margin-top: 30px;
-    margin-left: 90px;
+    margin-top: 40px;
+    margin-right: 350px;
     min-height: 400px;
-    min-width: 380px;
+    min-width: 420px;
     background-color:rgb(59, 33, 57);
     border-radius: 15px;
     box-shadow: 10px 5px 5px rgb(148, 103, 139);
     text-align: center;
     color: #ffffff;
 }
+
+.intro-container h1 {
+  font-size: 45px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-left: 20px;
+  display: inline;
+  }
 
 div[class*=box] {
     height: 33.33%;
