@@ -2,15 +2,18 @@
 let greeting=document.querySelector("#intro");
 let startButton=document.querySelector("#start");
 let introSection=document.querySelector("#introcontainer");
-let questionsSection=document.querySelector("#questionscontainer");
+let questionSection=document.querySelector("#questionscontainer");
 let beginQuestions=document.querySelector("#beginquestions");
+let end=document.querySelector("#end");
 
-//buttons
-let selecButtons=document.querySelector()
-let selectButton1=document.querySelector(#selectbtn1);
-let selectButton2=document.querySelector(#selectbtn2);
-let selectButton3=document.querySelector(#selectbtn3);
-let selectButton4=document.querySelector(#selectbtn4);
+
+
+let questionBank = [ {
+    question: "Questions 1: which is?",
+    selections: ["A. none"],
+    answer: "A"
+}
+]
 
 //timer
 let remainingTime=document.getElementById("timer");
@@ -19,11 +22,9 @@ let questionNum=0;
 let scoreSum=0;
 let questionerCounter=1;
 
-let questionBank
-
 //countdown function
-fucntion timeCountDown() {
-    let timerInt=intervalSet(function () {
+function timeCountDown() {
+    let timerInt=setInterval(function () {
     remainingSeconds--;
     remainingTime.textContent="Time Left: "+remainingSeconds+" s";
     
@@ -40,12 +41,13 @@ fucntion timeCountDown() {
 },1000);
 }
 
-function quizStart () {
-    introContainer.style.display="none";
-    questionContainer.style.display="block";
+function quizStart() {
+    introSection.style.display="none";
+    questionSection.style.display="block";
     questionNum=0
     timeCountDown();
-    questionReveal(questionNum);
+    questionStart(questionNum);
+}
 
 //function to start quiz
 function questionStart (n) {
@@ -57,3 +59,4 @@ function questionStart (n) {
     questionNum= q;
 }
 
+startButton.addEventListener("click", quizStart);
