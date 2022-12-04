@@ -7,7 +7,6 @@ let beginQuestions=document.querySelector("#beginquestions");
 let end=document.querySelector("#end");
 
 
-
 let questionBank = [ {
     question: "Questions 1: which is?",
     selections: ["A. none"],
@@ -43,7 +42,7 @@ function timeCountDown() {
 
 function quizStart() {
     introSection.style.display="none";
-    questionSection.style.display="block";
+    questionSection.style.display="inherit";
     questionNum=0
     timeCountDown();
     questionStart(questionNum);
