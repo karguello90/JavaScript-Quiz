@@ -21,6 +21,7 @@ let questionerCounter=1;
 
 let questionBank
 
+//countdown function
 fucntion timeCountDown() {
     let timerInt=intervalSet(function () {
     remainingSeconds--;
@@ -39,7 +40,15 @@ fucntion timeCountDown() {
 },1000);
 }
 
-function startQuiz (n) {
+function quizStart () {
+    introContainer.style.display="none";
+    questionContainer.style.display="block";
+    questionNum=0
+    timeCountDown();
+    questionReveal(questionNum);
+
+//function to start quiz
+function questionStart (n) {
     beginQuestions.textContent=questionBank[q].question;
     selectButton1.textContent=questionBank[q].selections[0];
     selectButton1.textContent=questionBank[q].selections[1];

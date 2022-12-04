@@ -57,6 +57,10 @@ a.glow, a.glow:hover, a.glow:focus {
   display: inline;
   }
 
+.question-container {
+  display: none;
+}
+
 div[class*=box] {
     height: 33.33%;
     width: 100%; 
