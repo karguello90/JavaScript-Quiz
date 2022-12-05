@@ -23,22 +23,22 @@ let end=document.querySelector("#end");
 
 let questionBank = [
     { 
-        question: "Question 1: If brackets are added, which of the following is an array?",
-        selection: ["A. Lions, Tigers, Bears", "B. True", "C. ==", "D. All of the above"],
+        question: "Q1: Which of the following is an array?",
+        selection: ["A. [Lions, Tigers, Bears]", "B. True", "C. ==", "D. All of the above"],
         answer: "A"
     },
     { 
-        question: "Question 2: Which file extension is used for JavaScript?",
+        question: "Q2: Which file extension is used for JavaScript?",
         selection: ["A. .Txt", "B. .Html", "C. .Jpeg", "D. .Js"],
         answer: "D"
     },
     { 
-        question: "Question 3: Which of the following makes a message appear in the console?",
+        question: "Q3: Which of the following makes a message appear in the console?",
         selection: ["A. Functions", "B. Math.Floor", "C. console.log", "D. None of these"],
         answer: "C"
     },
     { 
-        question: "Question 4: Which of the following declares a variable?",
+        question: "Q4: Which of the following declares a variable?",
         selection: ["A. Using var", "B. Using let", "C. Using const", "D. All of the above"],
         answer: "D"
     },
@@ -82,9 +82,9 @@ function quizStart() {
 function questionStart (q) {
     beginQuestions.textContent=questionBank[q].question;
     selectButton1.textContent=questionBank[q].selection[0];
-    selectButton1.textContent=questionBank[q].selection[1];
-    selectButton1.textContent=questionBank[q].selection[2];
-    selectButton1.textContent=questionBank[q].selection[3];
+    selectButton2.textContent=questionBank[q].selection[1];
+    selectButton3.textContent=questionBank[q].selection[2];
+    selectButton4.textContent=questionBank[q].selection[3];
     questionNum= q;
 }
 
