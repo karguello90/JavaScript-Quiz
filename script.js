@@ -4,7 +4,6 @@ let greeting=document.querySelector("#intro");
 let questionSection=document.querySelector("#questions");
 let beginQuestions=document.querySelector("#beginquestions");
 
-
 let questionButtons=document.querySelectorAll(".selection");
 let btnAnswer1=document.querySelector("#selectbtn1");
 let btnAnswer2=document.querySelector("#selectbtn2");
@@ -16,13 +15,13 @@ let scoreDisplay=document.querySelector("#complete");
 let endScore=document.querySelector("#endscore");
 let playerInitials=document.querySelector("#initials");
 
-let completeButton=document.querySelector("#completeBTN")
+let returnButton=document.querySelector("#returnBTN")
 let topScoreDisplay=document.querySelector("#topscore")
 let recordTop=document.querySelector("#scorerecorder")
 let showList=document.querySelector("#scoreboardcheck")
 let end=document.querySelector("#end");
-
-let returnButton=document.querySelector("#returnBTN")
+let submitButton=document.querySelector("#completeBTN")
+let resetButton=document.querySelector("#wipeBTN")
 
 let questionBank = [
     { 
@@ -207,7 +206,7 @@ submitButton.addEventListener("click",function(event) {
 });
 
 //View page for top scores
-viewTopScore.addEventListener("click", function(event) {
+showList.addEventListener("click", function(event) {
     event.preventDefault();
     scoreDisplay.style.display="none";
     greeting.style.display="none";
