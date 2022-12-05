@@ -76,6 +76,11 @@ a.glow, a.glow:hover, a.glow:focus {
   display: none;
 }
 
+ul {
+  list-style-type:none;
+  display:block;
+}
+
 div[class*=box] {
     height: 33.33%;
     width: 100%; 

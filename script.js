@@ -3,7 +3,7 @@ let startButton=document.querySelector("#start");
 let greeting=document.querySelector("#intro");
 let questionSection=document.querySelector("#questions");
 let beginQuestions=document.querySelector("#beginquestions");
-let end=document.querySelector("#end");
+
 
 let questionButtons=document.querySelectorAll(".Selection");
 let btnAnswer1=document.querySelector("#selectbtn1");
@@ -12,6 +12,13 @@ let btnAnswer3=document.querySelector("#selectbtn3");
 let btnAnswer4=document.querySelector("#selectbtn4");
 
 let answerLine=document.querySelector("#answerline");
+let scoreDisplay=document.querySelector("#complete");
+
+let playerInitials=document.querySelector("#initials");
+
+let completeButton=document.querySelector("#completeBTN")
+
+let end=document.querySelector("#end");
 
 let questionBank = [
     { 
@@ -177,6 +184,13 @@ function scoreRecorder () {
     scoreCreate();
 }
 
-
+//litsener to start quiz
 startButton.addEventListener("click", quizStart);
+
+//litsener for answer buttons, goes to following question
+questionButtons.forEach(function(click){
+    click.addEventListener("click", answerChecker);
+});
+
+
 
