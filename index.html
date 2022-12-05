@@ -20,11 +20,12 @@
 <body>
     <!--Main container for quiz-->
     <div class="container">
-    <div class="intro-container" id=introcontainer">
+    <section class="intro-container" id=introcontainer">
         <div id="intro">
         <h1>JavaScript Quiz 9000</h1>
-        <p>To win:</p>
         <p>Answer all questions before time runs out!</p>
+        <p>*CAUTION* Every incorrect question will</p>
+        <p>deduct 5 seconds from the timer.</p>
         <p>Can you beat the quiz?</p>
     <!--Start Button-->
             <button class="start-button" id="start">
@@ -34,14 +35,15 @@
                 </div>
                 </div>
             </button>
-        </div>
         <p></p>
         <img src="./assets/images/Ryu.gif" alt="gif image of ryu from streetfighter">
         <p></p>
-    </div>
-    </div>
+        </div>
+    </section>
+    
 
-    <div class="question-container" id="questionscontainer">
+    <!--questions container-->
+    <section class="question-container" id="questions">
             <h2 id="beginquestions">begin questions</h2>
             <ul>
                 <li> <button class="selectionbutton" id="selectbtn1" value="a"> 
@@ -80,7 +82,12 @@
                     </button>
                 </li>
             </ul>
-    </div>
+
+            <div id="answerline">
+                <p>Success or Incorrect</p>
+            </div>
+        </section>
+     </div>
                 
                     
 

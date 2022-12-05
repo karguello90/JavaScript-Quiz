@@ -1,18 +1,40 @@
 //containers
-let greeting=document.querySelector("#intro");
 let startButton=document.querySelector("#start");
-let introSection=document.querySelector("#introcontainer");
-let questionSection=document.querySelector("#questionscontainer");
+let greeting=document.querySelector("#intro");
+let questionSection=document.querySelector("#questions");
 let beginQuestions=document.querySelector("#beginquestions");
 let end=document.querySelector("#end");
 
+let questionButtons=document.querySelectorAll(".Selection");
+let btnAnswer1=document.querySelector("#selectbtn1");
+let btnAnswer2=document.querySelector("#selectbtn2");
+let btnAnswer3=document.querySelector("#selectbtn3");
+let btnAnswer4=document.querySelector("#selectbtn4");
 
-let questionBank = [ {
-    question: "Questions 1: which is?",
-    selections: ["A. none"],
-    answer: "A"
-}
-]
+let answerLine=document.querySelector("#answerline");
+
+let questionBank = [
+    { 
+        question: "Question 1: If brackets are added, which of the following is an array?",
+        selection: ["A. Lions, Tigers, Bears", "B. True", "C. ==", "D. All of the above"],
+        answer: "A"
+    },
+    { 
+        question: "Question 2: Which file extension is used for JavaScript?",
+        selection: ["A. .Txt", "B. .Html", "C. .Jpeg", "D. .Js"],
+        answer: "D"
+    },
+    { 
+        question: "Question 3: Which of the following makes a message appear in the console?",
+        selection: ["A. Functions", "B. Math.Floor", "C. console.log", "D. None of these"],
+        answer: "C"
+    },
+    { 
+        question: "Question 4: Which of the following declares a variable?",
+        selection: ["A. Using var", "B. Using let", "C. Using const", "D. All of the above"],
+        answer: "D"
+    },
+];
 
 //timer
 let remainingTime=document.getElementById("timer");
@@ -41,21 +63,53 @@ function timeCountDown() {
 }
 
 function quizStart() {
-    introSection.style.display="none";
-    questionSection.style.display="inherit";
+    greeting.style.display="none";
+    questions.style.display="block";
     questionNum=0
     timeCountDown();
     questionStart(questionNum);
 }
 
 //function to start quiz
-function questionStart (n) {
+function questionStart (q) {
     beginQuestions.textContent=questionBank[q].question;
-    selectButton1.textContent=questionBank[q].selections[0];
-    selectButton1.textContent=questionBank[q].selections[1];
-    selectButton1.textContent=questionBank[q].selections[2];
-    selectButton1.textContent=questionBank[q].selections[3];
+    selectButton1.textContent=questionBank[q].selection[0];
+    selectButton1.textContent=questionBank[q].selection[1];
+    selectButton1.textContent=questionBank[q].selection[2];
+    selectButton1.textContent=questionBank[q].selection[3];
     questionNum= q;
 }
+
+//function to shows user if answer is correct or incorrect
+function answerChecker(event) {
+    event.preventDefault();
+    answerChecker.style.display="block";
+    outOfTime(function () {
+        answerChecker.style.display="none";
+}, 1000);
+if (questionBank[questionNum].answer==event.target.value) {
+    answerChecker.textContent="Success!";
+    scoreSum=scoreSum+1;
+}
+else {
+    remainingSeconds=remainingSeconds-5;
+    answerChecker.textContent="Incorrect, the answer is " + questionBank[questionNum].answer+".";
+}
+if (questionNum<questionBank.length-1) {
+    questionStart(questionNum+1);
+} else {
+gameEnd();
+}
+sumQuestion++;
+}
+
+function gameEnd() {
+    questionSection.style.display="none";
+    scoreDisplay.style.display="block";
+    console.log(scoreDisplay);
+    endScore.textContent="Your score:"+endScore;
+    remainingTime.style.display="none";
+};
+
 
 startButton.addEventListener("click", quizStart);

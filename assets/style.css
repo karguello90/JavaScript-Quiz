@@ -52,6 +52,7 @@ a.glow, a.glow:hover, a.glow:focus {
     color: #ffffff;
 }
 
+
 .container h1 {
   font-size: 45px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -60,7 +61,15 @@ a.glow, a.glow:hover, a.glow:focus {
   }
 
 .container img {
-  max-width: 80px;
+  max-width: 65px;
+}
+
+.question-container {
+  display: block;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: #ffffff;
 }
 
 .question-container {
