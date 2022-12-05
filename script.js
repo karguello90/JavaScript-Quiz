@@ -73,6 +73,7 @@ function timeCountDown() {
 },1000);
 }
 
+//function begins the quiz sequence, timer starts
 function quizStart() {
     greeting.style.display="none";
     questions.style.display="block";
@@ -81,7 +82,7 @@ function quizStart() {
     questionStart(questionNum);
 }
 
-//function to start quiz
+//function to show questions page
 function questionStart (q) {
     beginQuestions.textContent=questionBank[q].question;
     selectButton1.textContent=questionBank[q].selection[0];
@@ -178,7 +179,7 @@ function addObject (q) {
     return newList;
 };
 
-//
+//records score and saves player initals
 function scoreRecorder () {
     let scoreObject={
         player: playerInitial.value,
