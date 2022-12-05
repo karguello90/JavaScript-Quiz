@@ -18,9 +18,11 @@ let playerInitials=document.querySelector("#initials");
 
 let completeButton=document.querySelector("#completeBTN")
 let topScoreDisplay=document.querySelector("#topscore")
-
-
+let recordTop=document.querySelector("#scorerecorder")
+let showList=document.querySelector("#scoreboardcheck")
 let end=document.querySelector("#end");
+
+let returnButton=document.querySelector("#returnBTN")
 
 let questionBank = [
     { 
@@ -94,7 +96,7 @@ function answerChecker(event) {
     event.preventDefault();
     answerLine.style.display="block";
     outOfTime(function () {
-        answerLine.style.display="none";
+    answerLine.style.display="none";
 }, 1000);
 if (questionBank[questionNum].answer==event.target.value) {
     answerLine.textContent="Success!";
