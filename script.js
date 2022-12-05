@@ -111,5 +111,16 @@ function gameEnd() {
     remainingTime.style.display="none";
 };
 
+function scoreShow() {
+    let showList=localStorage.getItem("High Scores");
+    if (showList !==null) {
+        listRefresh=JSON.parse(showList);
+        return listRefresh;
+} else {
+    listRefresh=[];
+}
+return listRefresh;
+};
+
 
 startButton.addEventListener("click", quizStart);
