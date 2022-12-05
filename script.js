@@ -198,7 +198,7 @@ questionButtons.forEach(function(click){
 
 submitButton.addEventListener("click",function(event) {
     event.preventDefault();
-    scoreDisplay.style.display="none";
+    scoreDisplay.style.display="block";
     greeting.style.display="none";
     topScoreDisplay.style.display="block";
     questionSection.style.display="none";
@@ -210,7 +210,7 @@ showList.addEventListener("click", function(event) {
     event.preventDefault();
     scoreDisplay.style.display="none";
     greeting.style.display="none";
-    topScoreDisplay="none";
+    topScoreDisplay="block";
     questionSection.style.display="none";
     location.reload();
 });
