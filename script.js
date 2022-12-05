@@ -13,10 +13,11 @@ let btnAnswer4=document.querySelector("#selectbtn4");
 
 let answerLine=document.querySelector("#answerline");
 let scoreDisplay=document.querySelector("#complete");
-
+let endScore=document.querySelector("#endscore");
 let playerInitials=document.querySelector("#initials");
 
 let completeButton=document.querySelector("#completeBTN")
+let topScoreDisplay=document.querySelector("#topscore")
 
 let end=document.querySelector("#end");
 
@@ -192,5 +193,16 @@ questionButtons.forEach(function(click){
     click.addEventListener("click", answerChecker);
 });
 
+completeButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    scoreDisplay.style.display="none";
+    greeting.style.display="none";
+    topScoreDisplay.style.display="block";
+    questionSection.style.display="none";
+    scoreRecorder();
+});
+
+
+    
 
 
