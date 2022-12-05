@@ -103,6 +103,7 @@ gameEnd();
 sumQuestion++;
 }
 
+//will end game when all questions are answered or time runs out, end of game
 function gameEnd() {
     questionSection.style.display="none";
     scoreDisplay.style.display="block";
@@ -111,8 +112,9 @@ function gameEnd() {
     remainingTime.style.display="none";
 };
 
+//will display current initials and score from the local storage
 function scoreShow() {
-    let showList=localStorage.getItem("High Scores");
+    let showList=localStorage.getItem("HighScores");
     if (showList !==null) {
         listRefresh=JSON.parse(showList);
         return listRefresh;
@@ -122,5 +124,59 @@ function scoreShow() {
 return listRefresh;
 };
 
+//will add current score
+function scoreCreate () {
+    savedScores.innerHTML="";
+    savedScores.style.display="block";
+    let topScores=sort();
+    //will display top 5 scores
+    let fiveBest=topScores.slice(0,5);
+    for (var i=0; i < fiveBest.length;i++) {
+        let object=fiveBest[i];
+    //score will show on scoreboard
+    let li=document.createElement("li");
+    li.textContent=object.user+"-"+object.score;
+    li.setAttribute("data-index",i);
+    savedScores.appendChild(li);
+}
+};
+
+//organize score and ranking on the score list
+function organize () {
+    let unorganizedList=scoreShow();
+    if (scoreShow==null) {
+        return;
+    } else {
+    unorganizedList.sort(function(a,b) {
+    return b.score-a.score; 
+})
+return unorganizedList;
+}};
+
+//add new scores and intials to local storage
+function addObject (q) {
+    let createdList=scoreShow();
+    createdList.push(q);
+    localStorage.setItem("HighScores")
+    if (createdList !==null) {
+    newList=JSON.parse(createdList);
+    return newList;
+    } else {
+        newList=[];
+    }
+    return newList;
+};
+
+//
+function scoreRecorder () {
+    let scoreObject={
+        player: playerInitial.value,
+        score: scoreSum
+    }
+    addObject(scoreObject);
+    scoreCreate();
+}
+
 
 startButton.addEventListener("click", quizStart);
+
