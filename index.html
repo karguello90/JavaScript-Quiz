@@ -12,7 +12,7 @@
 <header>
     <div class="Header">
         <p id="timer">TIME LEFT: 60 s</p>
-        <a href="High Scores" class="glow">HIGH SCORES</a>
+        <a href="High Scores" id="scoreboardcheck" class="glow">HIGH SCORES</a>
     </div>
 </header>
 
@@ -49,7 +49,7 @@
                 <li> 
                     <div class="box-3">
                     <div class="btn btn-three">
-                        <button class="selectionbutton" id="selectButton1" value="a"> 
+                        <button class="selectionbutton" id="selectButton1" value="A"> 
                         Answer1
                         </button>
                     </div>
@@ -59,7 +59,7 @@
                 <li> 
                     <div class="box-3">
                     <div class="btn btn-three">
-                        <button class="selectionbutton" id="selectButton2" value="b"> 
+                        <button class="selectionbutton" id="selectButton2" value="B"> 
                         Answer2
                         </button>
                     </div>
@@ -69,7 +69,7 @@
                 <li> 
                     <div class="box-3">
                     <div class="btn btn-three">
-                        <button class="selectionbutton" id="selectButton3" value="c"> 
+                        <button class="selectionbutton" id="selectButton3" value="C"> 
                         Answer3
                         </button>
                     </div>
@@ -79,7 +79,7 @@
                 <li> 
                     <div class="box-3">
                     <div class="btn btn-three">
-                        <button class="selectionbutton" id="selectButton4" value="d"> 
+                        <button class="selectionbutton" id="selectButton4" value="D"> 
                         Answer4
                         </button>
                     </div>
@@ -87,7 +87,7 @@
                 </li>
             </ul>
 
-            <div id="answerline">
+            <div id="answer">
                 <p>Success or Incorrect</p>
             </div>
         </section>
@@ -107,7 +107,30 @@
                     </button>
             </div>
         </section>
-                    
+
+        <section class="topscoredisplay" id="topscore">
+            <div>
+                <h2 id="end">Top Scores</h2>
+                <div id="scorerecorder"><p>Your top score</p></div>
+                </div>
+                    <button class="returnbutton" id="returnBTN">
+                        <div class="box-3">
+                        <div class="btn btn-three">
+                        Main Menu
+                        </div>
+                        </div>
+                    </button>
+                    <button class="wipebutton" id="wipeBTN">
+                        <div class="box-3">
+                        <div class="btn btn-three">
+                        Clear Top Score
+                        </div>
+                        </div>
+                    </button>
+            </div>
+        </section>
+          
+    
      </div>
                 
                     

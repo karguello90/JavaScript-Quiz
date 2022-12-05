@@ -5,19 +5,20 @@ let questionSection=document.querySelector("#questions");
 let beginQuestions=document.querySelector("#beginquestions");
 
 
-let questionButtons=document.querySelectorAll(".Selection");
+let questionButtons=document.querySelectorAll(".selection");
 let btnAnswer1=document.querySelector("#selectbtn1");
 let btnAnswer2=document.querySelector("#selectbtn2");
 let btnAnswer3=document.querySelector("#selectbtn3");
 let btnAnswer4=document.querySelector("#selectbtn4");
 
-let answerLine=document.querySelector("#answerline");
+let answerLine=document.querySelector("#answer");
 let scoreDisplay=document.querySelector("#complete");
 let endScore=document.querySelector("#endscore");
 let playerInitials=document.querySelector("#initials");
 
 let completeButton=document.querySelector("#completeBTN")
 let topScoreDisplay=document.querySelector("#topscore")
+
 
 let end=document.querySelector("#end");
 
@@ -91,17 +92,17 @@ function questionStart (q) {
 //function to shows user if answer is correct or incorrect
 function answerChecker(event) {
     event.preventDefault();
-    answerChecker.style.display="block";
+    answerLine.style.display="block";
     outOfTime(function () {
-        answerChecker.style.display="none";
+        answerLine.style.display="none";
 }, 1000);
 if (questionBank[questionNum].answer==event.target.value) {
-    answerChecker.textContent="Success!";
+    answerLine.textContent="Success!";
     scoreSum=scoreSum+1;
 }
 else {
     remainingSeconds=remainingSeconds-5;
-    answerChecker.textContent="Incorrect, the answer is " + questionBank[questionNum].answer+".";
+    answerLine.textContent="Incorrect, the answer is " + questionBank[questionNum].answer+" .";
 }
 if (questionNum<questionBank.length-1) {
     questionStart(questionNum+1);
@@ -134,8 +135,8 @@ return listRefresh;
 
 //will add current score
 function scoreCreate () {
-    savedScores.innerHTML="";
-    savedScores.style.display="block";
+    scoreRecorder.innerHTML="";
+    scoreRecorder.style.display="block";
     let topScores=sort();
     //will display top 5 scores
     let fiveBest=topScores.slice(0,5);
@@ -193,7 +194,7 @@ questionButtons.forEach(function(click){
     click.addEventListener("click", answerChecker);
 });
 
-completeButton.addEventListener("click", function(event) {
+submitButton.addEventListener("click",function(event) {
     event.preventDefault();
     scoreDisplay.style.display="none";
     greeting.style.display="none";
@@ -202,7 +203,30 @@ completeButton.addEventListener("click", function(event) {
     scoreRecorder();
 });
 
+//View page for top scores
+viewTopScore.addEventListener("click", function(event) {
+    event.preventDefault();
+    scoreDisplay.style.display="none";
+    greeting.style.display="none";
+    topScoreDisplay="none";
+    questionSection.style.display="none";
+    location.reload();
+});
 
-    
+//button to go back to greeting and play again
+returnButton.addEventListener("click",function(event) {
+    event.preventDefault();
+    scoreDisplay.style.display="none";
+    greeting.style.display="block";
+    topScoreDisplay.style.display="none";
+    questionSection.style.display="none";
+    location.reload();
+});
 
+//wipe local storage and reset page shows
+resetButton.addEventListener("click",function(event) {
+    event.preventDefault();
+    localStorage.clear();
+    scoreCreate();
+});
 

@@ -72,7 +72,7 @@ a.glow, a.glow:hover, a.glow:focus {
     color: #ffffff;
 }
 
-.question-container, .scoredisplay, #answerline {
+.question-container, .scoredisplay, .topscoredisplay, #answer {
   display: none;
 }
 
