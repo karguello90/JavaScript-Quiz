@@ -234,4 +234,3 @@ resetButton.addEventListener("click",function(event) {
     localStorage.clear();
     scoreCreate();
 });
-
