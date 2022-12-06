@@ -4,11 +4,12 @@ let greeting=document.querySelector("#intro");
 let questionSection=document.querySelector("#questions");
 let beginQuestions=document.querySelector("#beginquestions");
 
-let questionButtons=document.querySelectorAll(".selection");
+let questionButtons=document.querySelectorAll(".selectionbutton");
 let btnAnswer1=document.querySelector("#selectbtn1");
 let btnAnswer2=document.querySelector("#selectbtn2");
 let btnAnswer3=document.querySelector("#selectbtn3");
 let btnAnswer4=document.querySelector("#selectbtn4");
+console.log(questionButtons);
 
 let answerLine=document.querySelector("#answer");
 let scoreDisplay=document.querySelector("#complete");
@@ -78,39 +79,41 @@ function quizStart() {
     questions.style.display="block";
     questionNum=0
     timeCountDown();
-    questionStart(questionNum);
+    questionStart();
 }
 
 //function to show questions page
-function questionStart (q) {
-    beginQuestions.textContent=questionBank[q].question;
-    selectButton1.textContent=questionBank[q].selection[0];
-    selectButton2.textContent=questionBank[q].selection[1];
-    selectButton3.textContent=questionBank[q].selection[2];
-    selectButton4.textContent=questionBank[q].selection[3];
-    questionNum= q;
+function questionStart () {
+    beginQuestions.textContent=questionBank[questionNum].question;
+    selectButton1.textContent=questionBank[questionNum].selection[0];
+    selectButton2.textContent=questionBank[questionNum].selection[1];
+    selectButton3.textContent=questionBank[questionNum].selection[2];
+    selectButton4.textContent=questionBank[questionNum].selection[3];
+    questionNum++;
 }
 
 //function to shows user if answer is correct or incorrect
 function answerChecker(event) {
-    event.preventDefault();
+    console.log("click");
     answerLine.style.display="block";
-    outOfTime(function () {
-    answerLine.style.display="none";
-}, 1000);
-if (questionBank[questionNum].answer==event.target.value) {
-    answerLine.textContent="Success!";
-    scoreSum=scoreSum+1;
-}
-else {
-    remainingSeconds=remainingSeconds-5;
-    answerLine.textContent="Incorrect, the answer is " + questionBank[questionNum].answer+" .";
-}
-if (questionNum<questionBank.length-1) {
-    questionStart(questionNum+1);
-} else {
-gameEnd();
-}
+//     outOfTime(function () {
+//      answerLine.style.display="none";
+//  }, 1000);
+ if (questionBank[questionNum].answer==event.target.value) {
+     answerLine.textContent="Success!";
+     scoreSum=scoreSum+1;
+     questionNum++;
+     questionStart();
+ }
+ else {
+     remainingSeconds=remainingSeconds-1;
+     answerLine.textContent="Incorrect, the answer is " + questionBank[questionNum].answer+" .";
+ }
+ if (questionNum<questionBank.length-1) {
+     questionStart();
+ } else {
+ gameEnd();
+ }
 sumQuestion++;
 }
 
@@ -192,8 +195,8 @@ function scoreRecorder () {
 startButton.addEventListener("click", quizStart);
 
 //litsener for answer buttons, goes to following question
-questionButtons.forEach(function(click){
-    click.addEventListener("click", answerChecker);
+questionButtons.forEach(function(){
+    addEventListener("click", answerChecker);
 });
 
 submitButton.addEventListener("click",function(event) {
