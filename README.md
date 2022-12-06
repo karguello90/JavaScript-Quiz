@@ -12,4 +12,8 @@ The application is styled through use of creative hover effects on buttons and c
 
 The deployed application can be found here: https://karguello90.github.io/JavaScript-Quiz/
 
+<a href="https://postimg.cc/kBmHwRbq" target="_blank"><img src="https://i.postimg.cc/kBmHwRbq/Quiz-screenshot-1.png" alt="Quiz-screenshot-1"/></a><br/><br/>
+<a href="https://postimg.cc/R3NpqcjQ" target="_blank"><img src="https://i.postimg.cc/R3NpqcjQ/Quiz-screenshot-2.png" alt="Quiz-screenshot-2"/></a><br/><br/>
+
+
 
