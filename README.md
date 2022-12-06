@@ -14,5 +14,3 @@ The deployed application can be found here: https://karguello90.github.io/JavaSc
 
 <a href="https://postimg.cc/Snyx0Kwp" target="_blank"><img src="https://i.postimg.cc/Snyx0Kwp/Quiz-screenshot-1.png" alt="Quiz-screenshot-1"/></a><br/><br/>
 <a href="https://postimg.cc/k2fX7mmR" target="_blank"><img src="https://i.postimg.cc/k2fX7mmR/Quiz-screenshot-2.png" alt="Quiz-screenshot-2"/></a><br/><br/>
-
-<a href="https://ibb.co/Phy0DLZ"><img src="https://i.ibb.co/Phy0DLZ/Quiz-screenshot-1.png" alt="Quiz-screenshot-1" border="0"></a> <a href="https://ibb.co/XkcQvmT"><img src="https://i.ibb.co/XkcQvmT/Quiz-screenshot-2.png" alt="Quiz-screenshot-2" border="0"></a>
