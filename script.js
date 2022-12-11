@@ -38,7 +38,6 @@ let questionBank = [
 let remainingTime=document.getElementById("timer");
 let remainingSeconds=60;
 let questionNum=0;
-let scoreSum=0;
 let questionerCounter=1;
 
 //countdown function
@@ -84,7 +83,6 @@ function answerChecker(event) {
     console.log("click");
  if (questionBank[questionNum].answer==event.target.value) {
      answerLine.textContent="Success!";
-     scoreSum=scoreSum+1;
      
      //questionNum++;
      questionStart();
@@ -109,7 +107,6 @@ questionNum++;
 function gameEnd() {
     questionSection.style.display="none";
     scoreDisplay.style.display="block";
-    console.log(scoreDisplay);
     endScore.textContent="Your score:"+endScore;
     remainingTime.style.display="none";
 };
