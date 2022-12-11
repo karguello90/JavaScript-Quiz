@@ -76,7 +76,7 @@ a.glow, a.glow:hover, a.glow:focus {
     color: #ffffff;
 }
 
-.question-container, .completequiz, .topscoredisplay {
+.question-container, .completequiz {
   display: none;
 }
 
