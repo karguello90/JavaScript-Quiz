@@ -14,14 +14,7 @@ let answerLine=document.querySelector("#answer");
 let scoreDisplay=document.querySelector("#complete");
 let endScore=document.querySelector("#endscore");
 let playerInitials=document.querySelector("#initials");
-
-let returnButton=document.querySelector("#returnBTN")
-let topScoreDisplay=document.querySelector("#topscore")
-let recordTop=document.querySelector("#scorerecorder")
-let showList=document.querySelector("#scoreboardcheck")
 let end=document.querySelector("#end");
-let submitButton=document.querySelector("#completeBTN")
-let resetButton=document.querySelector("#wipeBTN")
 
 let questionBank = [
     { 
