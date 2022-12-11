@@ -104,7 +104,6 @@ questionNum++;
 function gameEnd() {
     questionSection.style.display="none";
     scoreDisplay.style.display="block";
-    endScore.textContent="Your score:"+endScore;
     remainingTime.style.display="none";
 };
 
