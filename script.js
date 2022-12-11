@@ -83,8 +83,7 @@ function questionStart () {
     selectButton1.textContent=questionBank[questionNum].selection[0];
     selectButton2.textContent=questionBank[questionNum].selection[1];
     selectButton3.textContent=questionBank[questionNum].selection[2];
-    selectButton4.textContent=questionBank[questionNum].selection[3];
-    
+    selectButton4.textContent=questionBank[questionNum].selection[3];   
 }
 
 //function to shows user if answer is correct or incorrect
@@ -120,20 +119,6 @@ function gameEnd() {
     console.log(scoreDisplay);
     endScore.textContent="Your score:"+endScore;
     remainingTime.style.display="none";
-};
-
-//add new scores and intials to local storage
-function addObject (q) {
-    let createdList=scoreShow();
-    createdList.push(q);
-    localStorage.setItem("HighScores")
-    if (createdList !==null) {
-    newList=JSON.parse(createdList);
-    return newList;
-    } else {
-        newList=[];
-    }
-    return newList;
 };
 
 //litsener to start quiz
