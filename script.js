@@ -122,6 +122,5 @@ submitButton.addEventListener("click",function(event) {
     greeting.style.display="none";
     topScoreDisplay.style.display="block";
     questionSection.style.display="none";
-    scoreRecorder();
 });
 
