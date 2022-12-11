@@ -70,7 +70,6 @@ function quizStart() {
 
 //function to show questions page
 function questionStart () {
-    //questionNum++;
     beginQuestions.textContent=questionBank[questionNum].question;
     selectButton1.textContent=questionBank[questionNum].selection[0];
     selectButton2.textContent=questionBank[questionNum].selection[1];
@@ -83,8 +82,6 @@ function answerChecker(event) {
     console.log("click");
  if (questionBank[questionNum].answer==event.target.value) {
      answerLine.textContent="Success!";
-     
-     //questionNum++;
      questionStart();
  }
  else {
