@@ -90,10 +90,6 @@ function questionStart () {
 //function to shows user if answer is correct or incorrect
 function answerChecker(event) {
     console.log("click");
-    //answerLine.style.display="none";
-//     outOfTime(function () {
-//      answerLine.style.display="none";
-//  }, 1000);
  if (questionBank[questionNum].answer==event.target.value) {
      answerLine.textContent="Success!";
      scoreSum=scoreSum+1;
@@ -126,47 +122,6 @@ function gameEnd() {
     remainingTime.style.display="none";
 };
 
-//will display current initials and score from the local storage
-function scoreShow() {
-    let showList=localStorage.getItem("HighScores");
-    if (showList !==null) {
-        listRefresh=JSON.parse(showList);
-        return listRefresh;
-} else {
-    listRefresh=[];
-}
-return listRefresh;
-};
-
-//will add current score
-function scoreCreate () {
-    scoreRecorder.innerHTML="";
-    scoreRecorder.style.display="block";
-    let topScores=sort();
-    //will display top 5 scores
-    let fiveBest=topScores.slice(0,5);
-    for (var i=0; i < fiveBest.length;i++) {
-        let object=fiveBest[i];
-    //score will show on scoreboard
-    let li=document.createElement("li");
-    li.textContent=object.user+"-"+object.score;
-    li.setAttribute("data-index",i);
-    savedScores.appendChild(li);
-}
-};
-
-//organize score and ranking on the score list
-function organize () {
-    let unorganizedList=scoreShow();
-    if (scoreShow==null) {
-        return;
-    } else {
-    unorganizedList.sort(function(a,b) {
-    return b.score-a.score; 
-})
-return unorganizedList;
-}};
-
 //add new scores and intials to local storage
 function addObject (q) {
     let createdList=scoreShow();
@@ -180,16 +135,6 @@ function addObject (q) {
     }
     return newList;
 };
-
-//records score and saves player initals
-function scoreRecorder () {
-    let scoreObject={
-        player: playerInitial.value,
-        score: scoreSum
-    }
-    addObject(scoreObject);
-    scoreCreate();
-}
 
 //litsener to start quiz
 startButton.addEventListener("click", quizStart);
@@ -208,29 +153,3 @@ submitButton.addEventListener("click",function(event) {
     scoreRecorder();
 });
 
-//View page for top scores
-showList.addEventListener("click", function(event) {
-    event.preventDefault();
-    scoreDisplay.style.display="none";
-    greeting.style.display="none";
-    topScoreDisplay="block";
-    questionSection.style.display="none";
-    location.reload();
-});
-
-//button to go back to greeting and play again
-returnButton.addEventListener("click",function(event) {
-    event.preventDefault();
-    scoreDisplay.style.display="none";
-    greeting.style.display="block";
-    topScoreDisplay.style.display="none";
-    questionSection.style.display="none";
-    location.reload();
-});
-
-//wipe local storage and reset page shows
-resetButton.addEventListener("click",function(event) {
-    event.preventDefault();
-    localStorage.clear();
-    scoreCreate();
-});
