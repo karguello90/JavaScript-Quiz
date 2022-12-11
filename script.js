@@ -9,7 +9,6 @@ let btnAnswer1=document.querySelector("#selectbtn1");
 let btnAnswer2=document.querySelector("#selectbtn2");
 let btnAnswer3=document.querySelector("#selectbtn3");
 let btnAnswer4=document.querySelector("#selectbtn4");
-console.log(questionButtons);
 
 let answerLine=document.querySelector("#answer");
 let scoreDisplay=document.querySelector("#complete");
@@ -39,11 +38,6 @@ let questionBank = [
         question: "Q3: Which of the following makes a message appear in the console?",
         selection: ["A. Functions", "B. Math.Floor", "C. console.log", "D. None of these"],
         answer: "C"
-    },
-    { 
-        question: "Q4: Which of the following declares a variable?",
-        selection: ["A. Using var", "B. Using let", "C. Using const", "D. All of the above"],
-        answer: "D"
     },
 ];
 
@@ -84,37 +78,43 @@ function quizStart() {
 
 //function to show questions page
 function questionStart () {
+    //questionNum++;
     beginQuestions.textContent=questionBank[questionNum].question;
     selectButton1.textContent=questionBank[questionNum].selection[0];
     selectButton2.textContent=questionBank[questionNum].selection[1];
     selectButton3.textContent=questionBank[questionNum].selection[2];
     selectButton4.textContent=questionBank[questionNum].selection[3];
-    questionNum++;
+    
 }
 
 //function to shows user if answer is correct or incorrect
 function answerChecker(event) {
     console.log("click");
-    answerLine.style.display="block";
+    //answerLine.style.display="none";
 //     outOfTime(function () {
 //      answerLine.style.display="none";
 //  }, 1000);
  if (questionBank[questionNum].answer==event.target.value) {
      answerLine.textContent="Success!";
      scoreSum=scoreSum+1;
-     questionNum++;
+     
+     //questionNum++;
      questionStart();
  }
  else {
      remainingSeconds=remainingSeconds-1;
      answerLine.textContent="Incorrect, the answer is " + questionBank[questionNum].answer+" .";
  }
+ answerLine.removeAttribute("class");
+ setTimeout(function(){
+    answerLine.setAttribute("class", "hide");
+ },1000)
  if (questionNum<questionBank.length-1) {
      questionStart();
  } else {
  gameEnd();
  }
-sumQuestion++;
+questionNum++;
 }
 
 //will end game when all questions are answered or time runs out, end of game

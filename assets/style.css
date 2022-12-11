@@ -36,6 +36,10 @@ a.glow, a.glow:hover, a.glow:focus {
 	transition: 500ms linear 0s;
 	outline: 0 none;
 }
+.hide {
+  display:none;
+}
+
 
 .container {
     display: inline-block;
@@ -72,7 +76,7 @@ a.glow, a.glow:hover, a.glow:focus {
     color: #ffffff;
 }
 
-.question-container, .completequiz, .topscoredisplay, #answer {
+.question-container, .completequiz, .topscoredisplay {
   display: none;
 }
 
