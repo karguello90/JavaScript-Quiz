@@ -115,6 +115,7 @@ questionButtons.forEach(function(){
     addEventListener("click", answerChecker);
 });
 
+//button to submit initials and score at end of quiz, needs write and containers to be added.
 submitButton.addEventListener("click",function(event) {
     event.preventDefault();
     scoreDisplay.style.display="block";
